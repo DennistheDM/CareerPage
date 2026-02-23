@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dennis Makhandia — Operations & Strategy Professional</title>
+<meta name="description" content="Dennis Makhandia blends electrical engineering rigor with TU München management training to deliver operations, IT, and facility strategies for complex, regulated environments." />
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -24,7 +25,7 @@
 
   body {
     font-family: 'DM Sans', sans-serif;
-    background: var(--paper);
+    background: linear-gradient(180deg, #fdfbf8 0%, #f5f0e9 40%, #ece6dc 100%);
     color: var(--ink);
     line-height: 1.7;
     font-size: 16px;
@@ -40,9 +41,17 @@
     justify-content: space-between;
     align-items: center;
     padding: 1.1rem 3rem;
-    background: rgba(245, 242, 235, 0.92);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(24px);
+    border-radius: 99px;
+    margin: 1rem calc(6vw) 0;
+    border: 1px solid rgba(15, 15, 15, 0.08);
+    box-shadow: 0 25px 45px rgba(15, 15, 15, 0.12);
+    transition: transform 0.4s ease, border 0.3s ease;
+  }
+
+  nav.hide {
+    transform: translateY(-120%);
   }
 
   .nav-logo {
@@ -68,6 +77,35 @@
     color: var(--muted);
     text-decoration: none;
     transition: color 0.2s;
+    position: relative;
+    padding-bottom: 0.2rem;
+  }
+
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold), var(--accent));
+    transition: width 0.3s ease;
+  }
+
+  .nav-links a:hover::after,
+  .nav-links a:focus-visible::after {
+    width: 100%;
+  }
+
+  .nav-progress {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background: linear-gradient(90deg, var(--gold), var(--accent));
+    border-radius: 999px;
+    transition: width 0.2s ease;
   }
 
   .nav-links a:hover { color: var(--ink); }
@@ -153,6 +191,7 @@
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
+    align-items: center;
   }
 
   .btn-primary {
@@ -190,10 +229,30 @@
     text-decoration: none;
     border: 2px solid var(--border);
     transition: all 0.25s;
+    border-radius: 999px;
   }
 
   .btn-secondary:hover {
     border-color: var(--ink);
+  }
+
+  .btn-primary span,
+  .btn-secondary span {
+    transition: transform 0.3s ease;
+    display: inline-flex;
+  }
+
+  .btn-primary:hover span,
+  .btn-secondary:hover span {
+    transform: translateX(3px);
+  }
+
+  .hero-cta-note {
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
   }
 
   .hero-image-block {
@@ -329,6 +388,81 @@
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+  }
+
+  .impact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .impact-card {
+    padding: 1.8rem;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 20px 35px rgba(15, 15, 15, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .impact-number {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .impact-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    line-height: 1.35;
+    margin: 0;
+  }
+
+  .impact-card p {
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .section-cta {
+    margin-top: 3rem;
+    padding: 2rem;
+    border-radius: 18px;
+    border: 1px solid var(--border);
+    background: #fff;
+    box-shadow: 0 20px 35px rgba(15, 15, 15, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+
+  .section-cta p {
+    margin: 0;
+    color: var(--muted);
+  }
+
+  .section-cta .btn-inline {
+    align-self: flex-start;
+  }
+
+  .cta-note {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .impact-status {
+    font-size: 0.78rem;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-top: auto;
   }
 
   .highlight-card {
@@ -850,27 +984,91 @@
     line-height: 1.75;
   }
 
-  /* ─── FOOTER ─── */
   footer {
     background: #080808;
-    padding: 1.5rem 3rem;
+    padding: 2.5rem 3rem;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     border-top: 1px solid rgba(255,255,255,0.06);
+    gap: 3rem;
   }
 
-  .footer-name {
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    width: 100%;
+  }
+
+  .footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .footer-column h4 {
     font-family: 'Playfair Display', serif;
-    font-size: 0.9rem;
-    color: rgba(255,255,255,0.4);
+    font-size: 1rem;
+    color: rgba(255,255,255,0.9);
+    margin: 0 0 0.5rem;
+  }
+
+  .footer-column a {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.65);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-column a:hover {
+    color: var(--gold-light);
   }
 
   .footer-note {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
     font-size: 0.75rem;
-    color: rgba(255,255,255,0.25);
-    font-family: 'DM Mono', monospace;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    margin-top: 1.5rem;
+  }
+
+  .footer-form {
+    display: flex;
+    gap: 0.5rem;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 999px;
+    padding: 0.2rem;
+    background: rgba(255,255,255,0.06);
+  }
+
+  .footer-form input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 0.7rem 0.9rem;
+    color: #fff;
+    font-size: 0.85rem;
+  }
+
+  .footer-form button {
+    border: none;
+    background: var(--gold);
+    color: #fff;
+    padding: 0.7rem 1.1rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .footer-form button:hover {
+    background: var(--gold-light);
   }
 
   /* ─── ANIMATIONS ─── */
@@ -910,12 +1108,15 @@
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#experience">Experience</a></li>
+    <li><a href="#impact">Impact</a></li>
+    <li><a href="#skills">Skills</a></li>
     <li><a href="#thesis">Research</a></li>
     <li><a href="#education">Education</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+  <div class="nav-progress" aria-hidden="true"></div>
 </nav>
-
+<main>
 <!-- HERO -->
 <section class="hero" id="top">
   <div class="hero-text">
@@ -926,9 +1127,10 @@
       A cross-functional operations and strategy professional with a rare combination of engineering foundations, business management expertise, and hands-on experience spanning Siemens AG, international banking, and multi-site retail operations. Fluent in three languages, based in Munich, and built for complex environments.
     </p>
     <div class="hero-ctas">
-      <a href="mailto:dmakhandia@gmail.com" class="btn-primary">Get in Touch →</a>
-      <a href="https://www.linkedin.com/in/dennis-makhandia/" target="_blank" class="btn-secondary">LinkedIn ↗</a>
+      <a href="mailto:dmakhandia@gmail.com" class="btn-primary">Get in Touch <span aria-hidden="true">➜</span></a>
+      <a href="Dennis_Makhandia_CV.pdf" target="_blank" rel="noopener" class="btn-secondary">Download CV <span aria-hidden="true">↓</span></a>
     </div>
+    <p class="hero-cta-note">Reserve 15 minutes for an operations & strategy diagnostic (Mon–Fri).</p>
   </div>
 
   <div class="hero-image-block">
@@ -944,12 +1146,12 @@
         <span class="stat-label">Years Experience</span>
       </div>
       <div class="stat">
-        <span class="stat-number">3</span>
-        <span class="stat-label">Languages</span>
+        <span class="stat-number">30+</span>
+        <span class="stat-label">Retail Locations</span>
       </div>
       <div class="stat">
-        <span class="stat-number">1.5</span>
-        <span class="stat-label">BSc. GPA</span>
+        <span class="stat-number">3</span>
+        <span class="stat-label">Languages</span>
       </div>
     </div>
   </div>
@@ -1050,12 +1252,51 @@
     </div>
 
   </div>
+  <div class="section-cta">
+    <p>Need a prioritized operations roadmap or CSRD readiness scorecard?</p>
+    <a href="mailto:dmakhandia@gmail.com" class="btn-primary btn-inline">Book a 1:1 outcomes review <span aria-hidden="true">➜</span></a>
+    <span class="cta-note">Case files, dashboards, and vendor playbooks available on request.</span>
+  </div>
 </section>
 
+<!-- IMPACT -->
+<section id="impact">
+  <div class="section-header">
+    <span class="section-number">03</span>
+    <h2 class="section-title">Impact & Outcomes</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="impact-grid">
+    <article class="impact-card">
+      <p class="impact-number">01</p>
+      <h3>CSRD readiness & digital adoption</h3>
+      <p>Supported Siemens AG’s enterprise sustainability reporting rollout with software testing, release notes, and change communication so hybrid teams could meet new EU CSRD obligations without disrupting operations.</p>
+      <p class="impact-status">Status: Live in global business units · compliance-ready.</p>
+    </article>
+    <article class="impact-card">
+      <p class="impact-number">02</p>
+      <h3>Multi-site retail stability</h3>
+      <p>Delivered day-to-day operational support across 30+ Rossmann stores, covering checkout operations, payments, and staffing gaps to keep performance consistent across locations.</p>
+      <p class="impact-status">Status: Continued coverage across Munich network.</p>
+    </article>
+    <article class="impact-card">
+      <p class="impact-number">03</p>
+      <h3>Facility & vendor governance</h3>
+      <p>Led contract negotiation, SLA monitoring, and preventive maintenance reporting for HallmarkRetail’s property portfolio to sustain compliance and provide senior leadership with reliable cost intelligence.</p>
+      <p class="impact-status">Status: Documentation audited for regulatory reviews.</p>
+    </article>
+  </div>
+  <div class="section-cta">
+    <p>Translate this impact into your next operations program.</p>
+    <a href="mailto:dmakhandia@gmail.com" class="btn-secondary btn-inline">Request the impact dossier <span aria-hidden="true">↗</span></a>
+    <span class="cta-note">Delivered to hiring leaders, partners, and transformation sponsors.</span>
+  </div>
+</section>
+ 
 <!-- SKILLS -->
 <section id="skills">
   <div class="section-header">
-    <span class="section-number">03</span>
+    <span class="section-number">04</span>
     <h2 class="section-title">Skills & Tools</h2>
     <div class="section-line"></div>
   </div>
@@ -1111,7 +1352,7 @@
 <!-- THESIS / RESEARCH -->
 <section id="thesis" class="thesis-section">
   <div class="section-header">
-    <span class="section-number">04</span>
+    <span class="section-number">05</span>
     <h2 class="section-title">Research</h2>
     <div class="section-line"></div>
   </div>
@@ -1167,7 +1408,7 @@
 <!-- EDUCATION -->
 <section id="education" class="education-section">
   <div class="section-header">
-    <span class="section-number">05</span>
+    <span class="section-number">06</span>
     <h2 class="section-title">Education</h2>
     <div class="section-line"></div>
   </div>
@@ -1268,7 +1509,7 @@
 <!-- CONTACT -->
 <section id="contact" class="contact-section">
   <div class="section-header">
-    <span class="section-number">06</span>
+    <span class="section-number">07</span>
     <h2 class="section-title">Let's Connect</h2>
     <div class="section-line"></div>
   </div>
@@ -1308,10 +1549,65 @@
 </section>
 
 <!-- FOOTER -->
+  </main>
 <footer>
-  <span class="footer-name">Dennis Makhandia · Munich, Germany</span>
-  <span class="footer-note">MSc Management · TU München · 2025</span>
+  <div class="footer-grid">
+    <div class="footer-column">
+      <h4>Stay in touch</h4>
+      <p>Operations and strategy partner for regulated, multi-site programmes across Europe and Africa.</p>
+      <a href="mailto:dmakhandia@gmail.com">dmakhandia@gmail.com</a>
+      <a href="tel:+4915215260986">+49 152 152 60986</a>
+      <a href="https://www.linkedin.com/in/dennis-makhandia/" target="_blank" rel="noreferrer">LinkedIn profile</a>
+    </div>
+    <div class="footer-column">
+      <h4>Navigate the dossier</h4>
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#impact">Impact</a>
+      <a href="#thesis">Research</a>
+    </div>
+    <div class="footer-column">
+      <h4>Share a challenge</h4>
+      <form class="footer-form" action="mailto:dmakhandia@gmail.com" method="post" enctype="text/plain">
+        <input type="text" name="challenge" placeholder="Summarize the challenge" />
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+  <div class="footer-note">
+    <span>Dennis Makhandia · Munich, Germany · Available now</span>
+    <span>MSc Management · TU München · 2025</span>
+  </div>
 </footer>
+
+<script>
+  (function () {
+    const nav = document.querySelector('nav');
+    const progress = document.querySelector('.nav-progress');
+    let lastScroll = window.scrollY;
+
+    function updateProgress() {
+      const documentHeight = document.body.scrollHeight - window.innerHeight;
+      const scrollTop = window.scrollY;
+      if (progress && documentHeight > 0) {
+        const percent = Math.min(100, (scrollTop / documentHeight) * 100);
+        progress.style.width = percent + '%';
+      }
+      if (nav) {
+        if (scrollTop > lastScroll && scrollTop > 120) {
+          nav.classList.add('hide');
+        } else {
+          nav.classList.remove('hide');
+        }
+      }
+      lastScroll = scrollTop;
+    }
+
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    window.addEventListener('resize', updateProgress);
+    updateProgress();
+  })();
+</script>
 
 </body>
 </html>

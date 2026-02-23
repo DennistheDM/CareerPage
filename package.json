@@ -1,0 +1,22 @@
+{
+  "name": "careerpage",
+  "version": "1.0.0",
+  "description": "Dennis Makhandia — operations, strategy, and IT portfolio page. Open `index.html` to view the refreshed experience.",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx live-server",
+    "build": "echo \"No build step required; this is a static HTML portfolio.\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DennistheDM/CareerPage.git"
+  },
+  "keywords": [],
+  "author": "Dennis Makhandia",
+  "license": "MIT",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/DennistheDM/CareerPage/issues"
+  },
+  "homepage": "https://github.com/DennistheDM/CareerPage#readme"
+}
