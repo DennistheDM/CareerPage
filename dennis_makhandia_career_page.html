@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dennis Makhandia — Operations & Strategy Professional</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f0f0f;
+    --paper: #f5f2eb;
+    --cream: #ede9df;
+    --gold: #b8973a;
+    --gold-light: #d4b55a;
+    --muted: #6b6457;
+    --border: #d9d3c7;
+    --accent: #1a3a2e;
+    --accent-light: #2a5a44;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.7;
+    font-size: 16px;
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.1rem 3rem;
+    background: rgba(245, 242, 235, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--ink); }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 0 3rem;
+    padding-top: 5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 65%;
+    height: 130%;
+    background: var(--cream);
+    border-radius: 0 0 0 60% / 0 0 0 40%;
+    z-index: 0;
+  }
+
+  .hero-text { position: relative; z-index: 1; }
+
+  .hero-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 2rem;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .hero-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    font-weight: 900;
+    line-height: 1.0;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.3rem;
+  }
+
+  .hero-name em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    font-weight: 400;
+    font-style: italic;
+    color: var(--muted);
+    margin-bottom: 2rem;
+  }
+
+  .hero-summary {
+    font-size: 0.97rem;
+    color: var(--muted);
+    max-width: 480px;
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.85rem 2rem;
+    background: var(--accent);
+    color: #fff;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 2px solid var(--accent);
+    transition: all 0.25s;
+  }
+
+  .btn-primary:hover {
+    background: transparent;
+    color: var(--accent);
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.85rem 2rem;
+    background: transparent;
+    color: var(--ink);
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 2px solid var(--border);
+    transition: all 0.25s;
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--ink);
+  }
+
+  .hero-image-block {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .hero-photo-frame {
+    position: relative;
+    width: 340px;
+    height: 400px;
+  }
+
+  .hero-photo-frame::before {
+    content: '';
+    position: absolute;
+    top: 18px; left: 18px;
+    width: 100%; height: 100%;
+    border: 2px solid var(--gold);
+    z-index: 0;
+  }
+
+  .hero-photo-placeholder {
+    position: relative;
+    z-index: 1;
+    width: 340px;
+    height: 400px;
+    background: var(--accent);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.3);
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    letter-spacing: 0.1em;
+  }
+
+  .hero-photo-placeholder span {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+    color: rgba(255,255,255,0.5);
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    width: 100%;
+    max-width: 340px;
+    border: 1px solid var(--border);
+  }
+
+  .stat {
+    padding: 1rem;
+    text-align: center;
+    border-right: 1px solid var(--border);
+  }
+
+  .stat:last-child { border-right: none; }
+
+  .stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--accent);
+    display: block;
+  }
+
+  .stat-label {
+    font-size: 0.67rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* ─── SECTIONS ─── */
+  section {
+    padding: 6rem 3rem;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1.5rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .section-number {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* ─── ABOUT ─── */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .about-text p {
+    color: var(--muted);
+    margin-bottom: 1.2rem;
+    font-size: 0.97rem;
+    line-height: 1.85;
+  }
+
+  .about-highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .highlight-card {
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--gold);
+    background: var(--cream);
+  }
+
+  .highlight-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+    color: var(--accent);
+  }
+
+  .highlight-card p {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* ─── EXPERIENCE ─── */
+  .experience-section { background: var(--cream); }
+
+  .timeline {
+    position: relative;
+    padding-left: 2rem;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 1px;
+    background: var(--border);
+  }
+
+  .timeline-item {
+    position: relative;
+    padding-bottom: 3.5rem;
+    padding-left: 2rem;
+  }
+
+  .timeline-item:last-child { padding-bottom: 0; }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -2rem;
+    top: 0.4rem;
+    width: 9px;
+    height: 9px;
+    background: var(--gold);
+    border-radius: 50%;
+    transform: translateX(-4px);
+  }
+
+  .timeline-date {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+    text-transform: uppercase;
+  }
+
+  .timeline-role {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+    line-height: 1.2;
+  }
+
+  .timeline-company {
+    font-size: 0.88rem;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 1rem;
+    letter-spacing: 0.02em;
+  }
+
+  .timeline-bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .timeline-bullets li {
+    font-size: 0.9rem;
+    color: var(--muted);
+    padding-left: 1.2rem;
+    position: relative;
+    line-height: 1.65;
+  }
+
+  .timeline-bullets li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-size: 0.8rem;
+  }
+
+  /* ─── SKILLS ─── */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .skill-category h3 {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .tag {
+    padding: 0.35rem 0.8rem;
+    font-size: 0.78rem;
+    font-weight: 500;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    background: var(--cream);
+    letter-spacing: 0.02em;
+    transition: all 0.2s;
+    cursor: default;
+  }
+
+  .tag:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--paper);
+  }
+
+  .tag.featured {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+  }
+
+  /* ─── THESIS ─── */
+  .thesis-section { background: var(--accent); color: #fff; }
+
+  .thesis-section .section-title { color: #fff; }
+  .thesis-section .section-number { color: var(--gold-light); }
+  .thesis-section .section-line { background: rgba(255,255,255,0.15); }
+
+  .thesis-card {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    align-items: center;
+    padding: 3rem;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.05);
+  }
+
+  .thesis-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 1rem;
+  }
+
+  .thesis-title-display {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.3rem, 2.5vw, 2rem);
+    font-weight: 700;
+    line-height: 1.25;
+    font-style: italic;
+    color: #fff;
+  }
+
+  .thesis-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-top: 1.5rem;
+  }
+
+  .thesis-meta-item {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.55);
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .thesis-meta-item strong {
+    color: rgba(255,255,255,0.8);
+    font-weight: 500;
+  }
+
+  .thesis-body { border-left: 1px solid rgba(255,255,255,0.15); padding-left: 4rem; }
+
+  .thesis-abstract {
+    font-size: 0.93rem;
+    color: rgba(255,255,255,0.72);
+    line-height: 1.85;
+    margin-bottom: 1.5rem;
+  }
+
+  .thesis-keywords {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .thesis-keywords .tag {
+    background: rgba(255,255,255,0.08);
+    border-color: rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.7);
+    font-size: 0.73rem;
+  }
+
+  .thesis-keywords .tag:hover {
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+  }
+
+  .thesis-findings {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .finding {
+    padding: 1rem;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .finding-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--gold-light);
+    display: block;
+    margin-bottom: 0.3rem;
+  }
+
+  .finding p {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.5;
+  }
+
+  .btn-thesis {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.85rem 2rem;
+    background: var(--gold);
+    color: #fff;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 2px solid var(--gold);
+    transition: all 0.25s;
+    margin-top: 2rem;
+    display: inline-flex;
+  }
+
+  .btn-thesis:hover {
+    background: transparent;
+    color: var(--gold-light);
+    border-color: var(--gold-light);
+  }
+
+  /* ─── EDUCATION ─── */
+  .education-section { background: var(--cream); }
+
+  .education-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .edu-card {
+    padding: 2rem;
+    background: var(--paper);
+    border: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .edu-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 3px;
+    height: 100%;
+    background: var(--gold);
+  }
+
+  .edu-date {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .edu-degree {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+  }
+
+  .edu-school {
+    font-size: 0.87rem;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 0.8rem;
+  }
+
+  .edu-detail {
+    font-size: 0.83rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* ─── CERTS ─── */
+  .certs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+  }
+
+  .cert-item {
+    padding: 1.2rem 1.5rem;
+    border: 1px solid var(--border);
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .cert-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--accent);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+    font-family: 'DM Mono', monospace;
+  }
+
+  .cert-name {
+    font-size: 0.83rem;
+    font-weight: 500;
+    margin-bottom: 0.2rem;
+    line-height: 1.3;
+  }
+
+  .cert-issuer {
+    font-size: 0.73rem;
+    color: var(--muted);
+  }
+
+  /* ─── LANGUAGES ─── */
+  .languages-row {
+    display: flex;
+    gap: 2rem;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .lang-card {
+    flex: 1;
+    min-width: 180px;
+    padding: 1.5rem 2rem;
+    border: 1px solid var(--border);
+    text-align: center;
+  }
+
+  .lang-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+  }
+
+  .lang-level {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .lang-desc {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-top: 0.3rem;
+  }
+
+  /* ─── CONTACT ─── */
+  .contact-section { background: var(--ink); color: var(--paper); }
+
+  .contact-section .section-title { color: var(--paper); }
+  .contact-section .section-number { color: var(--gold); }
+  .contact-section .section-line { background: rgba(255,255,255,0.1); }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .contact-intro {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-style: italic;
+    color: rgba(245,242,235,0.7);
+    line-height: 1.5;
+    margin-bottom: 2rem;
+  }
+
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    text-decoration: none;
+    color: var(--paper);
+    transition: all 0.2s;
+  }
+
+  .contact-link:hover { color: var(--gold-light); }
+
+  .contact-link-icon {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--gold);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    width: 60px;
+    flex-shrink: 0;
+  }
+
+  .contact-link-value {
+    font-size: 0.93rem;
+  }
+
+  .availability-card {
+    padding: 2rem;
+    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.03);
+  }
+
+  .availability-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 1rem;
+    background: rgba(184, 151, 58, 0.15);
+    border: 1px solid rgba(184, 151, 58, 0.4);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 1.5rem;
+  }
+
+  .availability-badge::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: var(--gold-light);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  .availability-text {
+    font-size: 0.9rem;
+    color: rgba(245,242,235,0.6);
+    line-height: 1.75;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: #080808;
+    padding: 1.5rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .footer-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.4);
+  }
+
+  .footer-note {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.25);
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.05em;
+  }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-eyebrow { animation: fadeUp 0.7s ease both; }
+  .hero-name { animation: fadeUp 0.7s ease 0.12s both; }
+  .hero-title { animation: fadeUp 0.7s ease 0.22s both; }
+  .hero-summary { animation: fadeUp 0.7s ease 0.32s both; }
+  .hero-ctas { animation: fadeUp 0.7s ease 0.42s both; }
+  .hero-image-block { animation: fadeUp 0.7s ease 0.2s both; }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    section { padding: 4rem 1.5rem; }
+    .hero { grid-template-columns: 1fr; padding: 1.5rem; padding-top: 6rem; min-height: auto; gap: 3rem; }
+    .hero::before { display: none; }
+    .hero-photo-frame, .hero-photo-placeholder { width: 260px; height: 300px; }
+    .about-grid, .skills-grid, .education-grid, .certs-grid, .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .thesis-card { grid-template-columns: 1fr; gap: 2rem; }
+    .thesis-body { border-left: none; padding-left: 0; border-top: 1px solid rgba(255,255,255,0.15); padding-top: 2rem; }
+    .thesis-findings { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Dennis Makhandia</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#thesis">Research</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-text">
+    <p class="hero-eyebrow">Operations · Strategy · IT Projects</p>
+    <h1 class="hero-name">Dennis<br><em>Makhandia</em></h1>
+    <p class="hero-title">MSc. Management · TU München · B.Sc. Electrical Engineering</p>
+    <p class="hero-summary">
+      A cross-functional operations and strategy professional with a rare combination of engineering foundations, business management expertise, and hands-on experience spanning Siemens AG, international banking, and multi-site retail operations. Fluent in three languages, based in Munich, and built for complex environments.
+    </p>
+    <div class="hero-ctas">
+      <a href="mailto:dmakhandia@gmail.com" class="btn-primary">Get in Touch →</a>
+      <a href="https://www.linkedin.com/in/dennis-makhandia/" target="_blank" class="btn-secondary">LinkedIn ↗</a>
+    </div>
+  </div>
+
+  <div class="hero-image-block">
+    <div class="hero-photo-frame">
+      <div class="hero-photo-placeholder">
+        DM
+        <span>Munich, Germany</span>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-number">10+</span>
+        <span class="stat-label">Years Experience</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">3</span>
+        <span class="stat-label">Languages</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">1.5</span>
+        <span class="stat-label">BSc. GPA</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-header">
+    <span class="section-number">01</span>
+    <h2 class="section-title">About</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>
+        I'm an operations and strategy professional who bridges the gap between technical systems and business outcomes. My background in electrical engineering gives me a structured, analytical approach to problem-solving — while my Master's in Management from TU München has equipped me with the strategic and commercial lens to drive impact at the organizational level.
+      </p>
+      <p>
+        My career has taken me from processing international SWIFT transactions at Diamond Trust Bank in Nairobi, to coordinating facility service contracts across HallmarkRetail's property portfolio, to supporting enterprise-wide digital transformation and CSRD compliance rollout at Siemens AG in Munich.
+      </p>
+      <p>
+        What drives me is the intersection of process efficiency, stakeholder coordination, and technology adoption — specifically, how organizations can operationalize complexity into clean, scalable systems. I thrive in cross-functional environments where precision matters and where the work actually moves things forward.
+      </p>
+    </div>
+    <div class="about-highlights">
+      <div class="highlight-card">
+        <h4>Engineering Foundations</h4>
+        <p>B.Sc. Electrical Engineering (GPA 1.5) from Jomo Kenyatta University — with a thesis on intelligent gas measurement devices. Technical credibility that goes beyond buzzwords.</p>
+      </div>
+      <div class="highlight-card">
+        <h4>Strategic Business Training</h4>
+        <p>MSc. Management from TU München, supported by the DAAD Leadership for Africa scholarship programme. Coursework spanning supply chain, international finance, law, and AI in project risk management.</p>
+      </div>
+      <div class="highlight-card">
+        <h4>Regulated Industry Experience</h4>
+        <p>Hands-on exposure to banking compliance, retail operations, facility management, and enterprise IT project delivery — across Kenya, Germany, and international contexts.</p>
+      </div>
+      <div class="highlight-card">
+        <h4>Digital & Data Literacy</h4>
+        <p>Practical experience with SAP BW/4HANA, SAP Analytics Cloud, Power BI, Oracle SQL, Python, Jira, and Confluence — complemented by Linux Foundation cloud and Kubernetes certifications.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="experience-section">
+  <div class="section-header">
+    <span class="section-number">02</span>
+    <h2 class="section-title">Experience</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <p class="timeline-date">Jun 2025 – Feb 2026</p>
+      <h3 class="timeline-role">Werkstudent — Operations Management</h3>
+      <p class="timeline-company">GVO Studyheads / Rossmann Network, Munich</p>
+      <ul class="timeline-bullets">
+        <li>Delivered operational support across a network of 30+ Rossmann retail locations, demonstrating high adaptability across diverse store environments and teams.</li>
+        <li>Managed point-of-sale operations with precision — processing cash and card transactions and onboarding customers to self-service payment systems to improve checkout efficiency.</li>
+        <li>Ensured service continuity and consistent store performance by proactively covering staffing gaps across the network.</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <p class="timeline-date">Sep 2023 – Feb 2024</p>
+      <h3 class="timeline-role">Werkstudent — IT Project Management (Inhouse Consulting)</h3>
+      <p class="timeline-company">Siemens AG, Munich</p>
+      <ul class="timeline-bullets">
+        <li>Supported the enterprise-wide rollout of a corporate sustainability reporting solution to ensure compliance with new EU accounting regulations (CSRD) — directly contributing to regulatory readiness across the organization.</li>
+        <li>Assisted with software testing, release note documentation, and change communication for key digital transformation milestones, ensuring smooth adoption in hybrid working environments.</li>
+        <li>Collaborated cross-functionally with Product, Engineering, Operations, and IT Support teams to improve the usability of internal business tools and resolve system issues at pace.</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <p class="timeline-date">Jun 2021 – Sep 2022</p>
+      <h3 class="timeline-role">Operations Specialist — Facility Management</h3>
+      <p class="timeline-company">HallmarkRetail Management, Nairobi</p>
+      <ul class="timeline-bullets">
+        <li>Led coordination and management of service provider relationships for building technical services (plumbing, electrical, HVAC, cleaning, security) — including contract negotiations and performance monitoring against SLAs.</li>
+        <li>Developed and implemented preventive maintenance schedules for property infrastructure; conducted regular inspections to ensure operational continuity and compliance with regulatory requirements.</li>
+        <li>Maintained comprehensive documentation systems for all property management activities — service contracts, SLAs, maintenance logs — to ensure full audit readiness.</li>
+        <li>Managed end-to-end contract processes for facility service providers, space planning, damage reporting, and the production of operating cost and vendor performance reports for senior management.</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <p class="timeline-date">May 2013 – May 2019</p>
+      <h3 class="timeline-role">Operations Assistant — Client Services</h3>
+      <p class="timeline-company">Diamond Trust Bank Limited, Nairobi</p>
+      <ul class="timeline-bullets">
+        <li>Processed and authorized international SWIFT transactions in a high-volume, regulated banking environment — where accuracy and compliance were non-negotiable.</li>
+        <li>Contributed to process improvements across compliance, controlling, and reporting functions, streamlining daily operational workflows.</li>
+        <li>Ensured reliable, structured daily banking operations that met internal and regulatory standards consistently.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-header">
+    <span class="section-number">03</span>
+    <h2 class="section-title">Skills & Tools</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="skills-grid">
+    <div class="skill-category">
+      <h3>Core Competencies</h3>
+      <div class="skill-tags">
+        <span class="tag featured">Facility Management</span>
+        <span class="tag featured">Operations Management</span>
+        <span class="tag">Contract Management</span>
+        <span class="tag">Stakeholder Management</span>
+        <span class="tag">Process Optimisation</span>
+        <span class="tag">Change Management</span>
+        <span class="tag">Agile & Waterfall PM</span>
+        <span class="tag">Strategic Procurement</span>
+        <span class="tag">Business Negotiation</span>
+        <span class="tag">Data Management</span>
+      </div>
+    </div>
+    <div class="skill-category">
+      <h3>Technical Tools</h3>
+      <div class="skill-tags">
+        <span class="tag">SAP Analytics Cloud</span>
+        <span class="tag">SAP BW/4HANA</span>
+        <span class="tag">SAP IBP</span>
+        <span class="tag">Power BI</span>
+        <span class="tag">Oracle SQL</span>
+        <span class="tag">Python</span>
+        <span class="tag">Jira</span>
+        <span class="tag">Confluence</span>
+        <span class="tag">SharePoint</span>
+        <span class="tag">MS Office Suite</span>
+        <span class="tag">Google Workspace</span>
+        <span class="tag">Notion</span>
+      </div>
+    </div>
+    <div class="skill-category">
+      <h3>Systems & Platforms</h3>
+      <div class="skill-tags">
+        <span class="tag">Windows</span>
+        <span class="tag">Linux</span>
+        <span class="tag">macOS</span>
+        <span class="tag">Cloud Infrastructure</span>
+        <span class="tag">Kubernetes (Fundamentals)</span>
+        <span class="tag">Zoom / Teams / Webex</span>
+        <span class="tag">SWIFT Transactions</span>
+        <span class="tag">CSRD Reporting</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THESIS / RESEARCH -->
+<section id="thesis" class="thesis-section">
+  <div class="section-header">
+    <span class="section-number">04</span>
+    <h2 class="section-title">Research</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="thesis-card">
+    <div class="thesis-intro">
+      <p class="thesis-label">Master's Thesis · TU München · 2025</p>
+      <h3 class="thesis-title-display">"How does Cloud Computing support Strategic Entrepreneurship in Firms?"</h3>
+      <div class="thesis-meta">
+        <div class="thesis-meta-item"><strong>Supervisor:</strong> Prof. Dr. Dr. Holger Patzelt</div>
+        <div class="thesis-meta-item"><strong>Chair:</strong> Entrepreneurship, TUM School of Management</div>
+        <div class="thesis-meta-item"><strong>Method:</strong> Qualitative research — semi-structured interviews</div>
+        <div class="thesis-meta-item"><strong>Scope:</strong> 6 industry practitioners across 6 countries</div>
+        <div class="thesis-meta-item"><strong>Submitted:</strong> February 2025</div>
+      </div>
+      <a href="https://mousy-eagle-19c.notion.site/263672cf8bc9800aa85bf23b2797bc49" target="_blank" class="btn-thesis">View Full Thesis ↗</a>
+    </div>
+    <div class="thesis-body">
+      <p class="thesis-abstract">
+        This research investigates how cloud computing technology facilitates strategic entrepreneurship within firms — examining whether it enables organizations to simultaneously preserve existing competitive advantages while pursuing new business opportunities. Using a qualitative approach with six senior practitioners across cybersecurity, banking, software, manufacturing, and IT services, the study produces a three-cycle coding framework revealing how cloud-derived advantages translate into entrepreneurial capabilities.
+      </p>
+      <div class="thesis-keywords">
+        <span class="tag">Cloud Computing</span>
+        <span class="tag">Strategic Entrepreneurship</span>
+        <span class="tag">Value Creation</span>
+        <span class="tag">Opportunity-Seeking</span>
+        <span class="tag">Competitive Advantage</span>
+        <span class="tag">Qualitative Research</span>
+        <span class="tag">ATLAS.TI</span>
+      </div>
+      <p style="font-size:0.82rem; color:rgba(255,255,255,0.5); font-family:'DM Mono',monospace; letter-spacing:0.05em; text-transform:uppercase; margin-bottom:0.7rem;">Key Findings</p>
+      <div class="thesis-findings">
+        <div class="finding">
+          <span class="finding-num">01</span>
+          <p>Cloud computing directly strengthens an entrepreneurial mindset by enabling affordable experimentation and continuous cloud-based learning.</p>
+        </div>
+        <div class="finding">
+          <span class="finding-num">02</span>
+          <p>It fosters entrepreneurial culture by lowering market entry barriers, enhancing agility, and reducing the cost of failure.</p>
+        </div>
+        <div class="finding">
+          <span class="finding-num">03</span>
+          <p>Cloud-driven leadership support enables data-driven decision-making and faster, more collaborative strategic choices.</p>
+        </div>
+        <div class="finding">
+          <span class="finding-num">04</span>
+          <p>Strategic resource management is enhanced through scalability, pay-per-use models, and focus on core business competencies.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" class="education-section">
+  <div class="section-header">
+    <span class="section-number">05</span>
+    <h2 class="section-title">Education</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="education-grid">
+    <div class="edu-card">
+      <p class="edu-date">Oct 2022 – Jul 2025</p>
+      <h3 class="edu-degree">Master of Science — Management (BWL)</h3>
+      <p class="edu-school">Technische Universität München (TUM)</p>
+      <p class="edu-detail">
+        Thesis: <em>"How does Cloud Computing support Strategic Entrepreneurship in Firms?"</em><br><br>
+        DAAD "Leadership for Africa" Scholarship Programme (2022–2025). Coursework included Supply Chain & Logistics, German Business Law, Accounting, International Finance, Consumer Research, AI for Innovation & Entrepreneurship, AI in Project Risk Management, and Change Leadership.
+      </p>
+    </div>
+    <div class="edu-card">
+      <p class="edu-date">May 2008 – Jun 2013</p>
+      <h3 class="edu-degree">Bachelor of Science — Electrical Engineering</h3>
+      <p class="edu-school">Jomo Kenyatta University of Agriculture and Technology, Nairobi</p>
+      <p class="edu-detail">
+        GPA: <strong>1.5 (Top of class)</strong><br><br>
+        Thesis: <em>"Intelligent Gas Capacity Measurement Device"</em><br><br>
+        Core subjects: Engineering Mathematics, Computer Science, Control Engineering.
+      </p>
+    </div>
+  </div>
+
+  <!-- CERTIFICATIONS -->
+  <div style="margin-top:3rem;">
+    <p style="font-family:'DM Mono',monospace; font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold); margin-bottom:1.5rem;">Certifications & Professional Development</p>
+    <div class="certs-grid">
+      <div class="cert-item">
+        <div class="cert-icon">GGL</div>
+        <div>
+          <p class="cert-name">Google Project Management & Data Analytics</p>
+          <p class="cert-issuer">Google / Coursera</p>
+        </div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-icon">SQL</div>
+        <div>
+          <p class="cert-name">Relational Databases & SQL</p>
+          <p class="cert-issuer">Stanford Online</p>
+        </div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-icon">K8S</div>
+        <div>
+          <p class="cert-name">Cloud Infrastructure Technologies & Kubernetes Fundamentals</p>
+          <p class="cert-issuer">Linux Foundation</p>
+        </div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-icon">SAP</div>
+        <div>
+          <p class="cert-name">SAP Analytics Cloud, SAP BW/4HANA, SAP IBP</p>
+          <p class="cert-issuer">SAP</p>
+        </div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-icon">LI</div>
+        <div>
+          <p class="cert-name">Data Analytics · Financial Analysis · Derivatives · Negotiation</p>
+          <p class="cert-issuer">LinkedIn Learning</p>
+        </div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-icon">LDR</div>
+        <div>
+          <p class="cert-name">DAAD LEAD! Programme — Leadership, Sustainability & Career Skills</p>
+          <p class="cert-issuer">DAAD</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LANGUAGES -->
+  <div style="margin-top:3rem;">
+    <p style="font-family:'DM Mono',monospace; font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold); margin-bottom:1rem;">Languages</p>
+    <div class="languages-row">
+      <div class="lang-card">
+        <h4 class="lang-name">English</h4>
+        <p class="lang-level">C2 — Native</p>
+        <p class="lang-desc">Professional & academic fluency</p>
+      </div>
+      <div class="lang-card">
+        <h4 class="lang-name">Deutsch</h4>
+        <p class="lang-level">C1 — Business Fluent</p>
+        <p class="lang-desc">Negotiation-ready, verified</p>
+      </div>
+      <div class="lang-card">
+        <h4 class="lang-name">Kiswahili</h4>
+        <p class="lang-level">C2 — Native</p>
+        <p class="lang-desc">Mother tongue</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+  <div class="section-header">
+    <span class="section-number">06</span>
+    <h2 class="section-title">Let's Connect</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="contact-grid">
+    <div>
+      <p class="contact-intro">"Open to roles in Operations Management, IT Project Management, Facility Management, and Strategy — ideally in Munich or remote within Europe."</p>
+      <div class="contact-links">
+        <a href="mailto:dmakhandia@gmail.com" class="contact-link">
+          <span class="contact-link-icon">Email</span>
+          <span class="contact-link-value">dmakhandia@gmail.com</span>
+        </a>
+        <a href="tel:+4915215260986" class="contact-link">
+          <span class="contact-link-icon">Phone</span>
+          <span class="contact-link-value">+49 152 152 60986</span>
+        </a>
+        <a href="https://www.linkedin.com/in/dennis-makhandia/" target="_blank" class="contact-link">
+          <span class="contact-link-icon">LinkedIn</span>
+          <span class="contact-link-value">linkedin.com/in/dennis-makhandia</span>
+        </a>
+        <a href="#" class="contact-link">
+          <span class="contact-link-icon">Location</span>
+          <span class="contact-link-value">Adelheidstrasse 13, 80798 München</span>
+        </a>
+      </div>
+    </div>
+    <div>
+      <div class="availability-card">
+        <div class="availability-badge">Available Now</div>
+        <p class="availability-text">
+          I recently completed my Master's degree at TUM (February 2025) and am actively seeking full-time opportunities where I can apply my combined engineering-business background to complex operational or strategic challenges.<br><br>
+          I bring fluency in English, German, and Swahili — and a track record of delivering in regulated, multi-stakeholder environments across Europe and East Africa.<br><br>
+          If you're building something that needs precision, structure, and a genuine drive to get things done — I'd like to talk.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-name">Dennis Makhandia · Munich, Germany</span>
+  <span class="footer-note">MSc Management · TU München · 2025</span>
+</footer>
+
+</body>
+</html>
